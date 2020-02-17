@@ -42,7 +42,30 @@ public class Address {
         return PK;
     }
 
+    /**
+     * @return the sK
+     */
+    public PrivateKey getSK() {
+        return SK;
+    }
+
     public int getBalance() {
         return balance;
     }
+
+    void transferEZI(double enziniums) {
+        this.balance += enziniums;
+    }
+
+    public void send(TokenContract contract, Double enziniums) {
+        if (enziniums <= this.balance) {
+            contract.payable(getPK(), enziniums);
+            this.balance -= enziniums;
+        }
+    }
+
+    boolean isSKpresent() {
+        return this.getSK() != null ? true : false;
+    }
+
 }

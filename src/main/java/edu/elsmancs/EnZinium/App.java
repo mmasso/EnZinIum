@@ -78,7 +78,7 @@ public class App {
          * name() 
          * @return devuelve el nombre del token de forma human-readable (p.e., “US Dollars”).
          * 
-         * symbol()
+         * getSymbol()
          * @return el nombre del símbolo del token de forma human-readable (p.e., “USD”).
          * 
          * totalSupply()
@@ -148,6 +148,7 @@ public class App {
                                 + " "
                                 + ricknillos.getSymbol());
 
+
         /**
          * Morty quiere comprarle 2 entradas a Rick
          * 
@@ -165,6 +166,7 @@ public class App {
          * require()
          * @param una condicion que ha de verificarse (ser cierta)
          * Lanza una EXCEPCION si no se cumple la condicion
+         */
         
 
         System.out.println("\n" + "Transferencia de entradas" + "\n" + 
@@ -175,12 +177,12 @@ public class App {
         System.out.println("Entradas de Rick: " 
                                 + ricknillos.balanceOf(rick.getPK()) 
                                 + " "
-                                + ricknillos.symbol());
+                                + ricknillos.getSymbol());
 
         System.out.println("Entradas de Morty: " 
                                 + ricknillos.balanceOf(morty.getPK())
                                 + " "
-                                + ricknillos.symbol());
+                                + ricknillos.getSymbol());
 
         // verifica que require falla si no hay tokens suficientes en el balance de Rick
         ricknillos.transfer(morty.getPK(), 300d);
@@ -188,7 +190,7 @@ public class App {
         System.out.println("Rick no tiene 300 entradas => entradas de Morty: " 
                                 + ricknillos.balanceOf(morty.getPK())
                                 + " "
-                                + ricknillos.symbol());
+                                + ricknillos.getSymbol());
         
         // Morty vuelve a comprar un par de entradas mas
         ricknillos.transfer(morty.getPK(), 2d);
@@ -196,7 +198,7 @@ public class App {
         System.out.println("2 entradas mas para Morty: " 
                                 + ricknillos.balanceOf(morty.getPK())
                                 + " "
-                                + ricknillos.symbol());
+                                + ricknillos.getSymbol());
 
         /**
          * A veces, hay reventa ;)
@@ -210,7 +212,7 @@ public class App {
          * @param sender PK
          * @param recipient PK
          * @param cantidad de tokens
-        
+         */
 
         System.out.println("\n" + "Reventa de entradas" + "\n" + 
                                   "==================="        );
@@ -220,11 +222,11 @@ public class App {
         System.out.println("Entradas de Morty: " 
                                 + ricknillos.balanceOf(morty.getPK())
                                 + " "
-                                + ricknillos.symbol());
+                                + ricknillos.getSymbol());
         System.out.println("Entradas de Jen: " 
                                 + ricknillos.balanceOf(jen.getPK())
                                 + " "
-                                + ricknillos.symbol());
+                                + ricknillos.getSymbol());
 
         /**
          * Llega el dia del concierto y Rick quiere
@@ -235,7 +237,7 @@ public class App {
          * owners()
          * @return muestra en consola la PublicKey de los compradores
          *         y el numero de tokens que han adquirido
-         
+          */
 
         System.out.println("\n" + "Lista de compradores" + "\n" + 
                                   "===================="        );
@@ -247,7 +249,7 @@ public class App {
          * 
          * totalTokensSold()
          * @return numero de tokens (entradas) vendidos
-        
+         */
 
         System.out.println("\n" + "Total de asistentes: " 
                                     + ricknillos.totalTokensSold() + "\n");
@@ -316,7 +318,7 @@ public class App {
         System.out.println("Owner: " + rick.getPK().hashCode() + " " 
                                      + ricknillos.balanceOf(rick.getPK())
                                      + " "
-                                     + ricknillos.symbol());
+                                     + ricknillos.getSymbol());
 
         System.out.println("\n" + "Address de Rick" + "\n" + 
                                   "==============="        );
@@ -332,7 +334,7 @@ public class App {
                             "\n => sigue teniendo 5 entradas: " 
                                 + ricknillos.balanceOf(morty.getPK())
                                 + " "
-                                + ricknillos.symbol());
+                                + ricknillos.getSymbol());
 
         System.out.println("\n" + "y Rick no recibe EZI => sigue con 10: " 
                                         + rick.getBalance()
@@ -341,7 +343,7 @@ public class App {
         System.out.println("y Rick sigue con sus 94 entradas: " 
                                             + ricknillos.balanceOf(rick.getPK())
                                             + " "
-                                            + ricknillos.symbol());
+                                            + ricknillos.getSymbol());
                                              */
     }
 }
