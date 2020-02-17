@@ -65,6 +65,15 @@ public class TokenContract {
         getBalances().putIfAbsent(PK, units);
     }
 
+    public int numOwners() {
+        return this.getBalances().size();
+    }
+    
+
+    public Double balanceOf(PublicKey owner){
+        return this.getBalances().getOrDefault(owner, 0.0);
+    }
+
     @Override
     public String toString() {
         return "name " + getName() + "\n"

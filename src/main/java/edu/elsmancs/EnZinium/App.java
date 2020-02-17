@@ -141,12 +141,12 @@ public class App {
         System.out.println("Entradas de Rick: " 
                                 + ricknillos.balanceOf(rick.getPK()) 
                                 + " "
-                                + ricknillos.symbol());
+                                + ricknillos.getSymbol());
 
         System.out.println("Entradas de Morty: " 
                                 + ricknillos.balanceOf(morty.getPK())
                                 + " "
-                                + ricknillos.symbol());
+                                + ricknillos.getSymbol());
 
         /**
          * Morty quiere comprarle 2 entradas a Rick
